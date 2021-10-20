@@ -41,12 +41,28 @@
 
 
     <TextView
+        android:id="@+id/tv_r"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="r:"
+        android:fontFamily="@font/alter_stand"
+        android:textColor="#62B5F6"
+        android:textSize="70sp"
+        android:visibility = "visible"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_H_35"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_V_10"
+        app:layout_constraintRight_toRightOf="@id/guideline_V_90"
+        app:layout_constraintTop_toTopOf="@id/guideline_H_25" />
+    <TextView
+        android:visibility = "gone"
+        android:id="@+id/tv_real"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/frequently_used"
         android:fontFamily="@font/alter_stand"
-        android:textColor="@color/stand_main"
-        android:textSize="100sp"
+        android:textColor="#62B5F6"
+        android:textSize="70sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@id/guideline_H_35"
         app:layout_constraintLeft_toLeftOf="@id/guideline_V_10"
@@ -57,12 +73,12 @@
         android:id="@+id/tv_D"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="d"
         android:fontFamily="@font/alter_stand"
+        android:text="d"
         android:textColor="@color/stand_gray"
-        android:textSize="100sp"
-        android:textAlignment="center"
+        android:textSize="70sp"
+        android:visibility="visible"
+
         app:layout_constraintBottom_toBottomOf="@id/guideline_H_35"
         app:layout_constraintLeft_toLeftOf="@id/guideline_V_65"
         app:layout_constraintRight_toRightOf="@id/guideline_V_90"
@@ -71,6 +87,7 @@
 
     <Button
         android:id="@+id/button"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"

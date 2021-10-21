@@ -2,23 +2,36 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intro_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:focusable="true"
+    android:backgroundTint="@color/stand_main"
+    android:focusableInTouchMode="true"
+    android:transitionName="realTvTransition"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
-        app:layout_constraintGuide_percent="0.15"
         android:id="@+id/guideline_H_25"
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
     <androidx.constraintlayout.widget.Guideline
-        app:layout_constraintGuide_percent="0.35"
         android:id="@+id/guideline_H_35"
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_H_55"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_V_10"
@@ -26,12 +39,14 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.10" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_V_65"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.65" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_V_90"
         android:layout_width="wrap_content"
@@ -41,29 +56,16 @@
 
 
     <TextView
-        android:id="@+id/tv_r"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:text="r:"
-        android:fontFamily="@font/alter_stand"
-        android:textColor="#62B5F6"
-        android:textSize="70sp"
-        android:visibility = "visible"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_H_35"
-        app:layout_constraintLeft_toLeftOf="@id/guideline_V_10"
-        app:layout_constraintRight_toRightOf="@id/guideline_V_90"
-        app:layout_constraintTop_toTopOf="@id/guideline_H_25" />
-    <TextView
-        android:visibility = "gone"
+
         android:id="@+id/tv_real"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/frequently_used"
         android:fontFamily="@font/alter_stand"
-        android:textColor="#62B5F6"
-        android:textSize="70sp"
+        android:text="@string/frequently_used"
         android:textAlignment="center"
+        android:textColor="@color/stand_gray"
+        android:textSize="70sp"
+        android:transitionName="realTvTransition"
         app:layout_constraintBottom_toBottomOf="@id/guideline_H_35"
         app:layout_constraintLeft_toLeftOf="@id/guideline_V_10"
         app:layout_constraintRight_toRightOf="@id/guideline_V_90"
@@ -77,31 +79,69 @@
         android:text="d"
         android:textColor="@color/stand_gray"
         android:textSize="70sp"
+        android:transitionName="dTvTransition"
         android:visibility="visible"
-
         app:layout_constraintBottom_toBottomOf="@id/guideline_H_35"
         app:layout_constraintLeft_toLeftOf="@id/guideline_V_65"
         app:layout_constraintRight_toRightOf="@id/guideline_V_90"
         app:layout_constraintTop_toTopOf="@id/guideline_H_25" />
 
 
-    <Button
-        android:id="@+id/button"
+    <TextView
 
-        android:layout_width="wrap_content"
+        android:id="@+id/et_checkNumber"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fontFamily="@font/alter_stand"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/stand_gray"
+
+        android:textSize="70sp"
+        android:transitionName="dTvTransition"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_H_55"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_V_10"
+        app:layout_constraintRight_toRightOf="@id/guideline_V_90"
+        app:layout_constraintTop_toTopOf="@id/guideline_H_35" />
+
+    <TextView
+        android:id="@+id/btn_checkNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alter_stand"
+        android:text=" real:d"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textColorHint="@color/stand_gray"
+        android:textSize="70sp"
+        android:transitionName="dTvTransition"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_H_55"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_V_10"
+        app:layout_constraintRight_toRightOf="@id/guideline_V_90"
+        app:layout_constraintTop_toTopOf="@id/guideline_H_35" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_on"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        android:textAllCaps="false"
+
+        android:textSize="40sp"
+        android:text='로그인'
+        android:fontFamily="@font/nbp_stand"
+        android:textColor="@color/stand_main"
+        android:backgroundTint="#FFFFFF"
+
+        app:layout_constraintLeft_toLeftOf="@id/guideline_V_10"
+        app:layout_constraintRight_toRightOf="@id/guideline_V_90"
+        app:layout_constraintTop_toBottomOf="@id/et_checkNumber"
+        >
+
+    </Button>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
